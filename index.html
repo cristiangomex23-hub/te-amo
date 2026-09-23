@@ -1,65 +1,320 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te amo 🧸🤎</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #211813;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        .contenedor {
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            color: white;
-            padding: 25px;
-        }
-        .foto {
-            width: 100%;
-            max-height: 65vh;
-            object-fit: contain;
-            border-radius: 20px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.45);
-            margin-bottom: 25px;
-        }
-        h1 {
-            font-size: 32px;
-            margin: 10px 0;
-            color: #f1d6c2;
-        }
-        p {
-            font-size: 20px;
-            color: #eee;
-            margin-top: 10px;
-        }
-        .corazones {
-            font-size: 28px;
-            margin-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Te amo babosa 🧸🤎</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        linear-gradient(
+          rgba(20, 10, 7, 0.38),
+          rgba(20, 10, 7, 0.38)
+        ),
+        url("COLLAJE.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      position: relative;
+    }
+    /* GATITOS */
+    .gatitos {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .gatito {
+      position: absolute;
+      opacity: 0.22;
+      font-size: 45px;
+      animation: moverGatito 8s ease-in-out infinite;
+    }
+    .g1 {
+      left: 5%;
+      top: 10%;
+      animation-duration: 8s;
+    }
+    .g2 {
+      left: 25%;
+      top: 30%;
+      font-size: 38px;
+      animation-duration: 10s;
+      animation-delay: 1s;
+    }
+    .g3 {
+      left: 75%;
+      top: 12%;
+      animation-duration: 9s;
+      animation-delay: 2s;
+    }
+    .g4 {
+      left: 88%;
+      top: 38%;
+      font-size: 35px;
+      animation-duration: 11s;
+      animation-delay: 3s;
+    }
+    .g5 {
+      left: 10%;
+      top: 68%;
+      font-size: 40px;
+      animation-duration: 9s;
+      animation-delay: 1.5s;
+    }
+    .g6 {
+      left: 35%;
+      top: 82%;
+      font-size: 34px;
+      animation-duration: 12s;
+      animation-delay: 2.5s;
+    }
+    .g7 {
+      left: 65%;
+      top: 70%;
+      animation-duration: 8s;
+      animation-delay: 4s;
+    }
+    .g8 {
+      left: 84%;
+      top: 84%;
+      font-size: 40px;
+      animation-duration: 10s;
+      animation-delay: 3.5s;
+    }
+    .g9 {
+      left: 48%;
+      top: 8%;
+      font-size: 32px;
+      animation-duration: 9s;
+      animation-delay: 5s;
+    }
+    .g10 {
+      left: 2%;
+      top: 88%;
+      font-size: 36px;
+      animation-duration: 11s;
+      animation-delay: 4.5s;
+    }
+    @keyframes moverGatito {
+      0% {
+        transform: translate(0, 0) rotate(-5deg);
+      }
+      25% {
+        transform: translate(20px, -15px) rotate(5deg);
+      }
+      50% {
+        transform: translate(-10px, -30px) rotate(-5deg);
+      }
+      75% {
+        transform: translate(15px, -12px) rotate(5deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(-5deg);
+      }
+    }
+    /* CORAZONES */
+    .corazones {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .corazon {
+      position: absolute;
+      font-size: 32px;
+      filter:
+        drop-shadow(0 0 5px rgba(255, 190, 160, 0.8))
+        drop-shadow(0 0 12px rgba(255, 150, 120, 0.5));
+      animation: rebotar 4s ease-in-out infinite;
+    }
+    .c1 {
+      left: 8%;
+      top: 18%;
+    }
+    .c2 {
+      left: 23%;
+      top: 70%;
+      font-size: 25px;
+      animation-delay: 1s;
+    }
+    .c3 {
+      left: 78%;
+      top: 20%;
+      font-size: 38px;
+      animation-delay: 2s;
+    }
+    .c4 {
+      left: 88%;
+      top: 65%;
+      font-size: 25px;
+      animation-delay: 0.5s;
+    }
+    .c5 {
+      left: 12%;
+      top: 48%;
+      font-size: 28px;
+      animation-delay: 2.5s;
+    }
+    .c6 {
+      left: 68%;
+      top: 78%;
+      font-size: 35px;
+      animation-delay: 1.5s;
+    }
+    .c7 {
+      left: 52%;
+      top: 10%;
+      font-size: 24px;
+      animation-delay: 3s;
+    }
+    @keyframes rebotar {
+      0%, 100% {
+        transform: translateY(0) scale(1) rotate(-8deg);
+      }
+      25% {
+        transform: translateY(-35px) scale(1.15) rotate(8deg);
+      }
+      50% {
+        transform: translateY(0) scale(0.95) rotate(-5deg);
+      }
+      75% {
+        transform: translateY(-20px) scale(1.08) rotate(6deg);
+      }
+    }
+    /* CONTENIDO */
+    .contenedor {
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      padding: 30px;
+      animation: aparecer 2s ease forwards;
+    }
+    .oso {
+      font-size: 65px;
+      display: block;
+      animation: flotar 2.5s ease-in-out infinite;
+      margin-bottom: 15px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 11vw, 82px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff8f4;
+      text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px #e0a58d,
+        0 0 35px #c77f64,
+        0 0 55px #a85d45;
+      animation:
+        latido 1.8s ease-in-out infinite,
+        brillo 2s ease-in-out infinite alternate;
+    }
+    .corazon-central {
+      font-size: 40px;
+      margin-top: 18px;
+      filter:
+        drop-shadow(0 0 8px rgba(255, 180, 150, 0.8));
+      animation:
+        latido 1.2s ease-in-out infinite;
+    }
+    .frase {
+      margin-top: 18px;
+      font-size: 17px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+    }
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @keyframes latido {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.06);
+      }
+    }
+    @keyframes brillo {
+      0% {
+        text-shadow:
+          0 0 5px #ffffff,
+          0 0 10px #ffffff,
+          0 0 20px #d9a58c,
+          0 0 30px #b8795e;
+      }
+      100% {
+        text-shadow:
+          0 0 8px #ffffff,
+          0 0 18px #ffffff,
+          0 0 30px #e2b29d,
+          0 0 50px #c17d61,
+          0 0 75px #a45d45;
+      }
+    }
+    @keyframes flotar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="contenedor">
-        <img src="COLLAJE.jpeg" alt="Nuestro collage" class="foto">
-        <h1>Te amo, babosa 🧸🤎</h1>
-        <p>
-            Aunque a veces no sepa cómo decirlo,
-            quería que supieras que todavía te llevo conmigo.
-        </p>
-        <div class="corazones">
-            🧸🤎🫶🏻
-        </div>
+  <!-- GATITOS -->
+  <div class="gatitos">
+    <span class="gatito g1">🐱</span>
+    <span class="gatito g2">🐈</span>
+    <span class="gatito g3">🐱</span>
+    <span class="gatito g4">🐈</span>
+    <span class="gatito g5">🐱</span>
+    <span class="gatito g6">🐈</span>
+    <span class="gatito g7">🐱</span>
+    <span class="gatito g8">🐈</span>
+    <span class="gatito g9">🐱</span>
+    <span class="gatito g10">🐈</span>
+  </div>
+  <!-- CORAZONES -->
+  <div class="corazones">
+    <span class="corazon c1">🤎</span>
+    <span class="corazon c2">♡</span>
+    <span class="corazon c3">🤎</span>
+    <span class="corazon c4">♡</span>
+    <span class="corazon c5">🤎</span>
+    <span class="corazon c6">♡</span>
+    <span class="corazon c7">🤎</span>
+  </div>
+  <!-- MENSAJE -->
+  <div class="contenedor">
+    <span class="oso">🧸</span>
+    <h1>Te amo babosa</h1>
+    <div class="corazon-central">🤎</div>
+    <div class="frase">
+      Siempre tú.
     </div>
+  </div>
 </body>
 </html>
