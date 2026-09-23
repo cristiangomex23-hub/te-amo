@@ -18,15 +18,128 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, #3a2923 0%, #160f0d 70%);
+
+      /* FOTO DE FONDO */
+      background-image:
+        linear-gradient(
+          rgba(20, 10, 7, 0.38),
+          rgba(20, 10, 7, 0.38)
+        ),
+        url("fondo.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
       font-family: Arial, sans-serif;
       color: white;
+      position: relative;
     }
+
+    /* =========================
+       GATITOS
+       ========================= */
+
+    .gatitos {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .gatito {
+      position: absolute;
+      font-size: 45px;
+      opacity: 0.20;
+      animation: moverGatito 7s ease-in-out infinite;
+    }
+
+    .g1 { left: 5%; top: 10%; animation-duration: 8s; }
+    .g2 { left: 23%; top: 30%; animation-duration: 10s; animation-delay: 1s; font-size: 38px; }
+    .g3 { left: 75%; top: 12%; animation-duration: 9s; animation-delay: 2s; }
+    .g4 { left: 88%; top: 38%; animation-duration: 11s; animation-delay: 3s; font-size: 35px; }
+    .g5 { left: 10%; top: 68%; animation-duration: 9s; animation-delay: 1.5s; font-size: 40px; }
+    .g6 { left: 35%; top: 82%; animation-duration: 12s; animation-delay: 2.5s; font-size: 34px; }
+    .g7 { left: 65%; top: 70%; animation-duration: 8s; animation-delay: 4s; }
+    .g8 { left: 84%; top: 84%; animation-duration: 10s; animation-delay: 3.5s; font-size: 40px; }
+    .g9 { left: 48%; top: 8%; animation-duration: 9s; animation-delay: 5s; font-size: 32px; }
+    .g10 { left: 2%; top: 88%; animation-duration: 11s; animation-delay: 4.5s; font-size: 36px; }
+
+    @keyframes moverGatito {
+      0% {
+        transform: translate(0, 0) rotate(-5deg);
+      }
+
+      25% {
+        transform: translate(18px, -15px) rotate(5deg);
+      }
+
+      50% {
+        transform: translate(-10px, -30px) rotate(-4deg);
+      }
+
+      75% {
+        transform: translate(15px, -12px) rotate(6deg);
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(-5deg);
+      }
+    }
+
+    /* =========================
+       CORAZONES REBOTANDO
+       ========================= */
+
+    .corazones {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .corazon {
+      position: absolute;
+      font-size: 32px;
+      animation: rebotar 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(255, 190, 160, 0.7));
+    }
+
+    .c1 { left: 8%; top: 18%; animation-delay: 0s; }
+    .c2 { left: 23%; top: 70%; font-size: 25px; animation-delay: 1s; }
+    .c3 { left: 78%; top: 20%; font-size: 38px; animation-delay: 2s; }
+    .c4 { left: 88%; top: 65%; font-size: 25px; animation-delay: 0.5s; }
+    .c5 { left: 12%; top: 48%; font-size: 28px; animation-delay: 2.5s; }
+    .c6 { left: 68%; top: 78%; font-size: 35px; animation-delay: 1.5s; }
+    .c7 { left: 52%; top: 10%; font-size: 24px; animation-delay: 3s; }
+
+    @keyframes rebotar {
+      0%, 100% {
+        transform: translateY(0) scale(1) rotate(-8deg);
+      }
+
+      25% {
+        transform: translateY(-35px) scale(1.12) rotate(8deg);
+      }
+
+      50% {
+        transform: translateY(0) scale(0.95) rotate(-5deg);
+      }
+
+      75% {
+        transform: translateY(-20px) scale(1.08) rotate(6deg);
+      }
+    }
+
+    /* =========================
+       MENSAJE
+       ========================= */
 
     .contenedor {
       text-align: center;
       position: relative;
-      z-index: 2;
+      z-index: 3;
       padding: 30px;
       animation: aparecer 2s ease forwards;
     }
@@ -40,44 +153,40 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(45px, 13vw, 85px);
+      font-size: clamp(40px, 11vw, 82px);
       font-weight: 700;
       letter-spacing: 2px;
+      color: #fff8f4;
+
       text-shadow:
-        0 0 10px rgba(255,255,255,0.35),
-        0 0 25px rgba(190,130,100,0.6);
-      animation: latido 1.8s ease-in-out infinite;
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px #d9a58c,
+        0 0 35px #b8795e,
+        0 0 55px #8f523d;
+
+      animation:
+        latido 1.8s ease-in-out infinite,
+        brillo 2.2s ease-in-out infinite alternate;
     }
 
     .corazon-central {
       font-size: 38px;
       margin-top: 18px;
       animation: latido 1.2s ease-in-out infinite;
+      filter: drop-shadow(0 0 10px rgba(255, 180, 150, 0.8));
     }
 
     .frase {
       margin-top: 18px;
       font-size: 17px;
-      opacity: 0.75;
+      opacity: 0.8;
       letter-spacing: 1px;
     }
 
-    .corazon {
-      position: absolute;
-      bottom: -50px;
-      font-size: 25px;
-      opacity: 0;
-      animation: subir linear infinite;
-      pointer-events: none;
-    }
-
-    .c1 { left: 8%;  animation-duration: 8s;  animation-delay: 1s; }
-    .c2 { left: 20%; animation-duration: 11s; animation-delay: 3s; font-size: 18px; }
-    .c3 { left: 35%; animation-duration: 9s;  animation-delay: 0s; font-size: 30px; }
-    .c4 { left: 52%; animation-duration: 12s; animation-delay: 4s; font-size: 20px; }
-    .c5 { left: 68%; animation-duration: 9s;  animation-delay: 2s; font-size: 32px; }
-    .c6 { left: 82%; animation-duration: 10s; animation-delay: 5s; font-size: 22px; }
-    .c7 { left: 92%; animation-duration: 13s; animation-delay: 1s; font-size: 17px; }
+    /* =========================
+       ANIMACIONES
+       ========================= */
 
     @keyframes aparecer {
       from {
@@ -101,6 +210,25 @@
       }
     }
 
+    @keyframes brillo {
+      0% {
+        text-shadow:
+          0 0 5px #ffffff,
+          0 0 10px #ffffff,
+          0 0 20px #d9a58c,
+          0 0 30px #b8795e;
+      }
+
+      100% {
+        text-shadow:
+          0 0 8px #ffffff,
+          0 0 18px #ffffff,
+          0 0 30px #e2b29d,
+          0 0 50px #c17d61,
+          0 0 75px #a45d45;
+      }
+    }
+
     @keyframes flotar {
       0%, 100% {
         transform: translateY(0);
@@ -110,80 +238,41 @@
         transform: translateY(-10px);
       }
     }
-
-    @keyframes subir {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-
-      15% {
-        opacity: 0.8;
-      }
-
-      80% {
-        opacity: 0.7;
-      }
-
-      100% {
-        transform: translateY(-110vh) rotate(25deg);
-        opacity: 0;
-      }
-    }
   </style>
-  .gatitos {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.gatitos span {
-  position: absolute;
-  font-size: 45px;
-  opacity: 0.18;
-  animation: gatitoFlota 6s ease-in-out infinite;
-}
-
-.gatitos span:nth-child(1) { left: 5%; top: 10%; }
-.gatitos span:nth-child(2) { left: 25%; top: 25%; animation-delay: 1s; }
-.gatitos span:nth-child(3) { left: 75%; top: 12%; animation-delay: 2s; }
-.gatitos span:nth-child(4) { left: 90%; top: 35%; animation-delay: 3s; }
-.gatitos span:nth-child(5) { left: 12%; top: 65%; animation-delay: 1.5s; }
-.gatitos span:nth-child(6) { left: 35%; top: 80%; animation-delay: 2.5s; }
-.gatitos span:nth-child(7) { left: 65%; top: 70%; animation-delay: 4s; }
-.gatitos span:nth-child(8) { left: 85%; top: 85%; animation-delay: 3.5s; }
-.gatitos span:nth-child(9) { left: 50%; top: 15%; animation-delay: 5s; }
-.gatitos span:nth-child(10) { left: 3%; top: 90%; animation-delay: 4.5s; }
-
-@keyframes gatitoFlota {
-  0%, 100% {
-    transform: translateY(0) rotate(-5deg);
-  }
-
-  50% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-}
 </head>
 
 <body>
 
-  <!-- Corazones flotando -->
-  <div class="corazon c1">🤎</div>
-  <div class="corazon c2">♡</div>
-  <div class="corazon c3">🤎</div>
-  <div class="corazon c4">♡</div>
-  <div class="corazon c5">🤎</div>
-  <div class="corazon c6">♡</div>
-  <div class="corazon c7">🤎</div>
+  <!-- GATITOS -->
+  <div class="gatitos">
+    <span class="gatito g1">🐱</span>
+    <span class="gatito g2">🐈</span>
+    <span class="gatito g3">🐱</span>
+    <span class="gatito g4">🐈</span>
+    <span class="gatito g5">🐱</span>
+    <span class="gatito g6">🐈</span>
+    <span class="gatito g7">🐱</span>
+    <span class="gatito g8">🐈</span>
+    <span class="gatito g9">🐱</span>
+    <span class="gatito g10">🐈</span>
+  </div>
 
-  <!-- Mensaje -->
+  <!-- CORAZONES -->
+  <div class="corazones">
+    <span class="corazon c1">🤎</span>
+    <span class="corazon c2">♡</span>
+    <span class="corazon c3">🤎</span>
+    <span class="corazon c4">♡</span>
+    <span class="corazon c5">🤎</span>
+    <span class="corazon c6">♡</span>
+    <span class="corazon c7">🤎</span>
+  </div>
+
+  <!-- MENSAJE -->
   <div class="contenedor">
     <span class="oso">🧸</span>
 
-    <h1>Te amo</h1>
+    <h1>Te amo babosa</h1>
 
     <div class="corazon-central">🤎</div>
 
@@ -193,17 +282,4 @@
   </div>
 
 </body>
-<!-- Gatitos de fondo -->
-<div class="gatitos">
-  <span>🐱</span>
-  <span>🐱</span>
-  <span>🐈</span>
-  <span>🐱</span>
-  <span>🐈</span>
-  <span>🐱</span>
-  <span>🐈</span>
-  <span>🐱</span>
-  <span>🐈</span>
-  <span>🐱</span>
-</div>
 </html>
